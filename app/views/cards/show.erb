@@ -1,0 +1,15 @@
+<% if @correct == true %>
+  <%= erb :"cards/_correct_results", locals: { card: @card, deck: @deck } %>
+<% else %>
+  <%= erb :"cards/_incorrect_results", locals: { card: @card, deck: @deck } %>
+<% end %>
+
+
+<%= @card.question %>
+
+<form action="/questions" method="POST">
+  <input type="text" name="answer" placeholder="Take a guess!">
+  <input type="submit" value="Guess">
+</form>
+
+<a href="/decks">Return to all decks</a>
