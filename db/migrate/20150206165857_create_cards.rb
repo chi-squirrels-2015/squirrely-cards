@@ -3,7 +3,7 @@ class CreateCards < ActiveRecord::Migration
     create_table :cards do |t|
       t.text       :question
       t.string     :answer
-      t.integer    :deck_id
+      t.belongs_to :deck
 
       t.timestamps
     end
