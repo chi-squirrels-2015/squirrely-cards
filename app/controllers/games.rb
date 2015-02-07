@@ -1,9 +1,5 @@
 before do
   @current_user = User.find(session[:user_id])
-
-  unless @current_user
-    redirect "/"
-  end
 end
 
 get "/games" do
@@ -12,6 +8,7 @@ get "/games" do
 end
 
 get "/games/new" do
+  @decks = Deck.all
   erb :"games/new"
 end
 
@@ -26,7 +23,7 @@ post "/games" do
   end
 end
 
-get "/games/:id/start"
+get "/games/:id/start" do
   game = Game.find(params[:id])
   first_card_id = game.deck.cards.first.id
 

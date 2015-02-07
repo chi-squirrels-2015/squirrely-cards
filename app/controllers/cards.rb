@@ -1,14 +1,10 @@
 before do
   @current_user = User.find(session[:user_id])
-
-  unless @current_user
-    redirect "/"
-  end
 end
 
 get "/games/:game_id/cards/:id" do
   @game = @current_user.games.find(params[:game_id])
-  @card = @game.find(params[:id])
+  @card = @game.cards.find(params[:id])
 
   erb :"cards/show"
 end
@@ -20,8 +16,6 @@ post "/games/:game_id/cards/:id/guess" do
   current_deck_of_cards = game.cards
   current_card_index = current_deck_of_cards.index(card)
   next_card = current_deck_of_cards.at(current_card_index + 1)
-
-
 
   if params[:guess] == card.answer
     flash[:notice] = "You got the correct answer!"

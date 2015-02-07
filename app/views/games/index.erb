@@ -1,5 +1,7 @@
-<p>Hi, <%= @current_user.username %>! Here are your stats:</p>
+<p>Hi, <%= @current_user.name %>!</p>
+<a href="/games/new">Start a new game</a>
 
+<p>Here are your stats:</p>
 <table>
   <thead>
     <th>Deck</th>
@@ -12,10 +14,9 @@
     <td><%= game.deck.name %></td>
     <td><%= game.deck.cards.count %></td>
     <td>
-      <% game.guesses.select do |guess| %>
-        <% if guess.correct %>
-      <% end.count %>
+      <%= game.guesses.select { |guess| guess.correct }.count %>
     </td>
   </tr>
   <% end %>
 </table>
+

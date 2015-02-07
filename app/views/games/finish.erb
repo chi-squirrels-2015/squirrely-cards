@@ -4,6 +4,12 @@
 
 <p> Congratulations, you finished the <%= @game.deck.name %> game.</p>
 
-<p> <a href="/games?deck_id=<%= @deck.id %>"> Play again </a></p>
+<p>
+  <form action="/games" method="POST">
+    <input type="hidden" name="deck_id" value="<%= @game.deck.id %>">
+    <input type="submit" value="Play again">
+  </form>
+</p>
+
 <p> <a href="/games/new"> Return to all decks </a></p>
 <p> <a href="/games"> Review your game stats </a></p>

@@ -4,6 +4,6 @@ Card.create!(question: "What is the capital of Alabama?", answer: "Montgomery", 
 Card.create!(question: "What is the capital of Illinois?", answer: "Springfield", deck_id: state_caps_deck.id)
 Card.create!(question: "What is the capital of California?", answer: "Sacramento", deck_id: state_caps_deck.id)
 
-User.create!(name: "Gabi Voicu", email: "gabi@dbc.com", password_hash: "1234")
-User.create!(name: "Jane Kim", email: "jane@dbc.com", password_hash: "1234")
-User.create!(name: "Matt Gray", email: "matt@dbc.com", password_hash: "1234")
+User.create!(name: "Gabi Voicu", email: "gabi@dbc.com", password: "1234")
+User.create!(name: "Jane Kim", email: "jane@dbc.com", password: "1234")
+User.create!(name: "Matt Gray", email: "matt@dbc.com", password: "1234")
