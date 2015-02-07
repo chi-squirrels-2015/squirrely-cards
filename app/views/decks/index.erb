@@ -1,1 +1,3 @@
-<%= @deck.name %>
+<% @decks.each do |deck| %>
+  <p><a href="/decks/<%= deck.id %>/cards/<%= deck.cards.first.id %>"><%= deck.name %></a></p>
+<% end %>

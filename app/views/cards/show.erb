@@ -1,15 +1,22 @@
-<% if @correct == true %>
-  <%= erb :"cards/_correct_results", locals: { card: @card, deck: @deck } %>
-<% else %>
-  <%= erb :"cards/_incorrect_results", locals: { card: @card, deck: @deck } %>
+<% if !@correct_answer.nil? %>
+  <% if @correct_answer %>
+    <%= erb :"cards/_correct_results" %>
+  <% else %>
+    <%= erb :"cards/_incorrect_results" %>
+  <% end %>
 <% end %>
 
 
-<%= @card.question %>
 
-<form action="/questions" method="POST">
-  <input type="text" name="answer" placeholder="Take a guess!">
+<%= @card.question %>
+<form action="/decks/<%= @card.deck.id %>/cards/<%= @card.id %>/guess" method="POST">
+  <input type="text" name="guess" placeholder="Take a guess!">
   <input type="submit" value="Guess">
 </form>
 
-<a href="/decks">Return to all decks</a>
+<% if @next_card_id %>
+  <a href="/decks/<%= @card.deck.id %>/cards/<%= @next_card_id %>">Next Card</a>
+<% else %>
+  <a href="/decks">Return to all decks</a>
+<% end %>
+
