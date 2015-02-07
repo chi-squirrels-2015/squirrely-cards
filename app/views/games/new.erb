@@ -1,0 +1,23 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<table>
+  <thead>
+    <th>Deck</th>
+    <th>Play</th>
+  </thead>
+
+  <% @decks.each do |deck| %>
+  <tr>
+    <td><%= deck.name %></td>
+    <td>
+      <form action="/games" method="POST">
+        <input type="hidden" name="deck_id" value="<%= deck.id %>">
+        <input type="submit" value="Play">
+      </form>
+    </td>
+  </tr>
+  <% end %>
+
+</table>
