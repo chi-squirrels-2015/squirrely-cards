@@ -1,0 +1,9 @@
+<p>Edit your account</p>
+
+<form action="/users" method="POST">
+  <input type="hidden" name="_method" method="PUT">
+  <input type="text" name="user[username]" value="<%= @user.username %>">
+  <input type="text" name="user[email]" placeholder="<%= @user.email %>">
+  <input type="text" name="user[password]" placeholder="<%= @user.password %>">
+  <input type="submit" value="Submit Changes">
+</form>
