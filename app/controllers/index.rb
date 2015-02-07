@@ -1,4 +1,4 @@
-get "/" do
-  erb :index
+get '/' do
+  redirect "/login"
 end
 
