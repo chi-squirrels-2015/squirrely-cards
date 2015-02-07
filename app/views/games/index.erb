@@ -1,3 +1,5 @@
+<!-- <br><br><hr></hr><br><br>
+
 <p>Hi, <%= @current_user.name %>!</p>
 <a href="/games/new">Start a new game</a>
 
@@ -9,7 +11,7 @@
     <th>Total Correct</th>
   </thead>
 
-  <% @current_user.games.each do |game| %>
+  <%# @current_user.games.each do |game| %>
   <tr>
     <td><%= game.deck.name %></td>
     <td><%= game.deck.cards.count %></td>
@@ -17,6 +19,8 @@
       <%= game.guesses.select { |guess| guess.correct }.count %>
     </td>
   </tr>
-  <% end %>
+  <%# end %>
 </table>
 
+
+ -->
