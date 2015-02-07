@@ -1,11 +1,6 @@
-<% if !@correct_answer.nil? %>
-  <% if @correct_answer %>
-    <%= erb :"cards/_correct_results" %>
-  <% else %>
-    <%= erb :"cards/_incorrect_results" %>
-  <% end %>
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
 <% end %>
-
 
 
 <%= @card.question %>
@@ -13,10 +8,3 @@
   <input type="text" name="guess" placeholder="Take a guess!">
   <input type="submit" value="Guess">
 </form>
-
-<% if @next_card_id %>
-  <a href="/decks/<%= @card.deck.id %>/cards/<%= @next_card_id %>">Next Card</a>
-<% else %>
-  <a href="/decks">Return to all decks</a>
-<% end %>
-

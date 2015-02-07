@@ -20,19 +20,18 @@ post "/decks/:deck_id/cards/:id/guess" do
   current_card_index = deck_of_cards.index(@card)
   next_card = deck_of_cards.at(current_card_index + 1)
 
-  @next_card_id = next_card.id if next_card
-
   guess = params[:guess]
 
-  if guess
-    @correct_answer = (@card.answer == guess)
+  if guess == @card.answer
+    flash[:notice] = "You got the correct answer!"
+  else
+    flash[:notice] = "The correct answer is #{@card.answer}."
   end
 
-  erb :"cards/show"
+  if next_card
+    redirect "/decks/#{@card.deck.id}/cards/#{next_card.id}"
+  else
+    redirect "/decks/#{@card.deck.id}/finish"
+  end
 
-  # if next_card
-  #   redirect "/decks/#{@card.deck.id}/cards/#{next_card.id}"
-  # else
-  #   erb :"decks/finish"
-  # end
 end
