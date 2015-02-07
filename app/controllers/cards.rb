@@ -1,37 +1,39 @@
-# get "/cards" do
-#   @cards = Cards.all
-#   erb :"cards/index"
-# end
+before do
+  @current_user = User.find(session[:user_id])
 
-get "/decks/:deck_id/cards/:id" do
-  @card = Card.find(params[:id])
-  deck_of_cards = @card.deck.cards
-  current_card_index = deck_of_cards.index(@card)
-  next_card = deck_of_cards.at(current_card_index + 1)
+  unless @current_user
+    redirect "/"
+  end
+end
 
-  @next_card_id = next_card.id if next_card
+get "/games/:game_id/cards/:id" do
+  @game = @current_user.games.find(params[:game_id])
+  @card = @game.find(params[:id])
 
   erb :"cards/show"
 end
 
-post "/decks/:deck_id/cards/:id/guess" do
-  @card = Card.find(params[:id])
-  deck_of_cards = @card.deck.cards
-  current_card_index = deck_of_cards.index(@card)
-  next_card = deck_of_cards.at(current_card_index + 1)
+post "/games/:game_id/cards/:id/guess" do
+  game = @current_user.games.find(params[:game_id])
+  card = game.cards.find(params[:id])
 
-  guess = params[:guess]
+  current_deck_of_cards = game.cards
+  current_card_index = current_deck_of_cards.index(card)
+  next_card = current_deck_of_cards.at(current_card_index + 1)
 
-  if guess == @card.answer
+
+
+  if params[:guess] == card.answer
     flash[:notice] = "You got the correct answer!"
+    Guess.create(game: game, card: card, correct: true)
   else
-    flash[:notice] = "The correct answer is #{@card.answer}."
+    flash[:notice] = "The correct answer is #{card.answer}."
+    Guess.create(game: game, card: card, correct: false)
   end
 
   if next_card
-    redirect "/decks/#{@card.deck.id}/cards/#{next_card.id}"
+    redirect "/games/#{game.id}/cards/#{next_card.id}"
   else
-    redirect "/decks/#{@card.deck.id}/finish"
+    redirect "/games/#{game.id}/finish"
   end
-
 end
