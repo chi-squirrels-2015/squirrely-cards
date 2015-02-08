@@ -1,9 +1,23 @@
-<form action="/login" method="post">
+<h2>Welcome to Squirrely Cards</h2>
+<br>
 
-  <input type="text" placeholder="email" name="email">
-  <input type="password" placeholder="password" name="password">
+<div class="forms_div">
+<h4>Log in in to play.</h4>
+  <form action="/login" method="post">
+    <input type="text" class="form-control" id="inputEmail" placeholder="email" name="email">
+    <input type="password" class="form-control" id="inputPassword" placeholder="password" name="password">
+    <input type="submit" class="btn btn-default" value="Log In">
+  </form>
+</div>
 
-  <input type="submit" value="Log In">
-</form>
+<br><hr></hr><br>
 
-<p><a href="/signup">Or, alternatively, Sign Up</a></p>
+<div class="forms_div">
+<h4>If you don't have an account, please sign up here.</h4>
+  <form action="/signup" method="post">
+    <input type="text" class="form-control" id="inputEmail" placeholder="name" name="name">
+    <input type="text" class="form-control" id="inputEmail" placeholder="email" name="email">
+    <input type="password" class="form-control" id="inputPassword" placeholder="password" name="password">
+    <input type="submit" class="btn btn-default" value="Sign Up with our delightful Squirrely Flashcards service">
+  </form>
+</div>

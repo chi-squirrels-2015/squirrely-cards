@@ -19,6 +19,15 @@ Card.create!(question: "Which NHL team plays in the city of New York City?", ans
 Card.create!(question: "Which NHL team plays in the city of Montreal?", answer: "The Canadians", deck: hockey)
 Card.create!(question: "Which NHL team plays in the city of Dallas?", answer: "The Stars", deck: hockey)
 
+rappers = Deck.create!(name: "TV Shows and Rappers")
+Card.create!(question: "", answer: "", deck:)
+Card.create!(question: "", answer: "", deck:)
+Card.create!(question: "", answer: "", deck:)
+Card.create!(question: "", answer: "", deck:)
+Card.create!(question: "", answer: "", deck:)
+
+
+
 User.create!(name: "Gabi Voicu", email: "gabi@dbc.com", password: "1234")
 User.create!(name: "Jane Kim", email: "jane@dbc.com", password: "1234")
 User.create!(name: "Matt Gray", email: "matt@dbc.com", password: "1234")

@@ -20,7 +20,7 @@ post "/games/:game_id/cards/:id/guess" do
   next_card = current_deck_of_cards.at(current_card_index + 1)
 
   if params[:guess] == card.answer
-    flash[:notice] = "You got the correct answer!"
+    flash[:notice] = "You got the correct answer. Nice job!"
     Guess.create(game: game, card: card, correct: true)
   else
     flash[:notice] = "Your guess was incorrect. The correct answer is #{card.answer}."

@@ -14,13 +14,13 @@
     </thead>
 
     <% @current_user.games.each do |game| %>
-    <tr>
-      <td><%= game.deck.name %></td>
-      <td><%= game.deck.cards.count %></td>
-      <td>
-        <%= game.guesses.select { |guess| guess.correct }.count %>
-      </td>
-    </tr>
+      <tr>
+        <td><%= game.deck.name %></td>
+        <td><%= game.deck.cards.count %></td>
+        <td>
+          <%= game.guesses.select { |guess| guess.correct }.count %>
+        </td>
+      </tr>
     <% end %>
   </table>
 </div>
@@ -44,5 +44,5 @@
 
 </div>
 
-
+<br><br><br>
 

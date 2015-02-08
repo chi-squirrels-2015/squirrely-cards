@@ -13,7 +13,8 @@ hr {
 
 nav {
   position: relative;
-  top: -20px;
+  top: -15px;
+  right: 5px;
   height: 30px;
   float: right;
   padding-bottom: 10px;
@@ -33,7 +34,7 @@ nav a {
   border-radius: 5px;
   margin: 20px auto;
   padding: 30px;
-  width: 90%;
+  width: 95%;
 }
 
 h2 {
@@ -81,20 +82,17 @@ h2 {
 }
 
 .stats_table_div td {
-  /*border: 1px solid black;*/
   text-align: center;
   font-size: 14px;
   border-bottom: 1px solid black;
   height: 50px;
-  width: 30%;
-  padding-left: 3px;
+  width: 40%;
 }
 
 .decks_div {
-  /*border: 1px solid black;*/
   display: inline-block;
   vertical-align: center;
-  margin-left: 4em;
+  margin-left: 6em;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -153,7 +151,7 @@ h2 {
   width: 175px;
 }
 
-#deck_4 {
+/*#deck_4 {
   display: inline-block;
   vertical-align: top;
   margin-left: 1em;
@@ -164,7 +162,7 @@ h2 {
   padding-top: 50px;
   height: 230px;
   width: 175px;
-}
+}*/
 
 
 /* #### CSS FOR CARDS WHEN GAME IS BEING PLAYED #### */
@@ -206,4 +204,14 @@ h2 {
 
 a {
   color: blue;
+}
+
+.forms_div {
+  margin-left: 20px;
+  width: 40%;
+}
+
+.form-control {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
