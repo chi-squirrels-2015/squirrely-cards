@@ -1,15 +1,22 @@
+<br><br><br><br>
+
 <% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
+  <p id="flash_notice"><%= flash[:notice] %></p>
+  <hr></hr>
 <% end %>
 
-<p> Congratulations, you finished the <%= @game.deck.name %> game.</p>
+<h3>Congratulations, you finished the <%= @game.deck.name %> game!</h3>
+<hr></hr>
+
+<p id="score_message">You scored <%= @game.guesses.select { |guess| guess.correct }.count %> out of <%= @game.cards.count %> cards.</p>
 
 <p>
   <form action="/games" method="POST">
     <input type="hidden" name="deck_id" value="<%= @game.deck.id %>">
-    <input type="submit" value="Play again">
+    <input class="btn btn-default" type="submit" value="Play again">
   </form>
 </p>
 
-<p> <a href="/games/new"> Return to all decks </a></p>
-<p> <a href="/games"> Review your game stats </a></p>
+<span><a class="btn btn-xs" href="/games/new"> Return to all decks</a></span>
+
+<br><br>

@@ -1,23 +1,52 @@
-<% if flash[:notice] %>
-  <%= flash[:notice] %>
-<% end %>
+<h2>Welcome to Squirrely Cards</h2>
+<br>
 
-<table>
-  <thead>
-    <th>Deck</th>
-    <th>Play</th>
-  </thead>
+  <div class="stats_table_div">
+  <h3>Hi, <%= @current_user.name %>!</h3>
+  <br>
+
+<% if @current_user.games.empty? %>
+  <%= erb :"games/_welcome_greeting" %>
+<% else %>
+  <p id="stats_header">How did you do?</p>
+    <table>
+      <thead>
+        <th>Deck</th>
+        <th>Total Cards</th>
+        <th>Total Correct</th>
+      </thead>
+
+      <% @current_user.games.each do |game| %>
+        <tr>
+          <td><%= game.deck.name %></td>
+          <td><%= game.deck.cards.count %></td>
+          <td>
+            <%= game.guesses.select { |guess| guess.correct }.count %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+<% end %>
+  </div>
+
+<div class="decks_div">
+<br><br>
+<h4 id="decks_header">Decks</h4>
+<hr id="deck_header_border"></hr>
 
   <% @decks.each do |deck| %>
-  <tr>
-    <td><%= deck.name %></td>
-    <td>
+
+    <div id="deck_<%= deck.id %>">
+      <h4><%= deck.name %></h4>
+      <br><hr id="deck_name_border"></hr><br>
       <form action="/games" method="POST">
-        <input type="hidden" name="deck_id" value="<%= deck.id %>">
-        <input type="submit" value="Play">
-      </form>
-    </td>
-  </tr>
+          <input type="hidden" name="deck_id" value="<%= deck.id %>">
+          <input class="btn btn-default" type="submit" value="Play">
+        </form>
+    </div>
   <% end %>
 
-</table>
+</div>
+
+<br>
+
