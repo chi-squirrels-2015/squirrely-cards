@@ -1,32 +1,36 @@
 <h2>Welcome to Squirrely Cards</h2>
 <br>
 
-<div class="stats_table_div">
-<h3>Hi, <%= @current_user.name %>!</h3>
-<br>
+  <div class="stats_table_div">
+  <h3>Hi, <%= @current_user.name %>!</h3>
+  <br>
 
-<p id="stats_header">How did you do?</p>
-  <table>
-    <thead>
-      <th>Deck</th>
-      <th>Total Cards</th>
-      <th>Total Correct</th>
-    </thead>
+<% if @current_user.games.empty? %>
+  <%= erb :"games/_welcome_greeting" %>
+<% else %>
+  <p id="stats_header">How did you do?</p>
+    <table>
+      <thead>
+        <th>Deck</th>
+        <th>Total Cards</th>
+        <th>Total Correct</th>
+      </thead>
 
-    <% @current_user.games.each do |game| %>
-      <tr>
-        <td><%= game.deck.name %></td>
-        <td><%= game.deck.cards.count %></td>
-        <td>
-          <%= game.guesses.select { |guess| guess.correct }.count %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-</div>
-
+      <% @current_user.games.each do |game| %>
+        <tr>
+          <td><%= game.deck.name %></td>
+          <td><%= game.deck.cards.count %></td>
+          <td>
+            <%= game.guesses.select { |guess| guess.correct }.count %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+<% end %>
+  </div>
 
 <div class="decks_div">
+<br><br>
 <h4 id="decks_header">Decks</h4>
 <hr id="deck_header_border"></hr>
 
@@ -44,5 +48,5 @@
 
 </div>
 
-<br><br><br>
+<br>
 

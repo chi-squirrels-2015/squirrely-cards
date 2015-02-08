@@ -26,7 +26,7 @@
 <body>
   <div class="jumbotron">
     <% if session[:user_id] %>
-      <nav><a href="/games/new">Home</a><a href="/logout">Logout</a> </nav>
+      <nav><a class="btn btn-xs" href="/games/new">Home</a><a class="btn btn-xs" href="/logout">Logout</a> </nav>
     <% end %>
     <%= yield %>
   </div>

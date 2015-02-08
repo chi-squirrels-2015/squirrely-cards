@@ -3,7 +3,7 @@ Card.create!(question: "What is the capital of Alabama?", answer: "Montgomery", 
 Card.create!(question: "What is the capital of Illinois?", answer: "Springfield", deck: state_caps_deck)
 Card.create!(question: "What is the capital of California?", answer: "Sacramento", deck: state_caps_deck)
 Card.create!(question: "What is the capital of Texas?", answer: "Austin", deck: state_caps_deck)
-Card.create!(question: "What is the capital of New York?", answer: "Alabama", deck: state_caps_deck)
+Card.create!(question: "What is the capital of New York?", answer: "Albany", deck: state_caps_deck)
 
 albums = Deck.create!(name: "Albums and Musicians")
 Card.create!(question: "Which artist made the album 'Thriller'?", answer: "Michael Jackson", deck: albums)
@@ -19,13 +19,26 @@ Card.create!(question: "Which NHL team plays in the city of New York City?", ans
 Card.create!(question: "Which NHL team plays in the city of Montreal?", answer: "The Canadians", deck: hockey)
 Card.create!(question: "Which NHL team plays in the city of Dallas?", answer: "The Stars", deck: hockey)
 
-rappers = Deck.create!(name: "TV Shows and Rappers")
-Card.create!(question: "", answer: "", deck:)
-Card.create!(question: "", answer: "", deck:)
-Card.create!(question: "", answer: "", deck:)
-Card.create!(question: "", answer: "", deck:)
-Card.create!(question: "", answer: "", deck:)
+world = Deck.create!(name: "World Capitals")
+Card.create!(question: "What is the capital of Germany?", answer: "Berlin", deck: world)
+Card.create!(question: "What is the capital of South Korea?", answer: "Seoul", deck: world)
+Card.create!(question: "What is the capital of Venezuela?", answer: "Caracas", deck: world)
+Card.create!(question: "What is the capital of Egypt?", answer: "Cairo", deck: world)
+Card.create!(question: "What is the capital of Australia?", answer: "Canberra", deck: world)
 
+directors = Deck.create!(name: "Movies and Directors")
+Card.create!(question: "Who directed the movie 'Breathless'?", answer: "Jean Luc Godard", deck: directors)
+Card.create!(question: "Who directed the movie 'Dazed and Confused'?", answer: "Richard Linklater", deck: directors)
+Card.create!(question: "Who directed the movie 'Citizen Kane'?", answer: "Orson Welles", deck: directors)
+Card.create!(question: "Who directed the movie 'The Breakfast Club'?", answer: "John Hughes", deck: directors)
+Card.create!(question: "Who directed the movie 'Taxi Driver'?", answer: "Martin Scorcese", deck: directors)
+
+greetings = Deck.create!(name: "Greetings in Other Languages")
+Card.create!(question: "In which language do you greet someone with, 'Hola'?", answer: "Spanish", deck: greetings)
+Card.create!(question: "In which language do you greet someone with, 'Xin chào'?", answer: "Vietnamese", deck: greetings)
+Card.create!(question: "In which language do you greet someone with, 'Bonjour'?", answer: "French", deck: greetings)
+Card.create!(question: "In which language do you greet someone with, 'Merhaba'?", answer: "Turkish", deck: greetings)
+Card.create!(question: "In which language do you greet someone with, 'Hej'?", answer: "Danish", deck: greetings)
 
 
 User.create!(name: "Gabi Voicu", email: "gabi@dbc.com", password: "1234")
