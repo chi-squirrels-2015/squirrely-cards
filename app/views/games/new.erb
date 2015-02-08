@@ -1,53 +1,46 @@
-<div class="stats_table">
-<h2>Hi, <%= @current_user.name %>!</h2>
+<h2>Welcome to Squirrely Cards</h2>
 <br>
 
-<p id="stats_header">
-  How did you do?
-</p>
+<div class="stats_table_div">
+<h3>Hi, <%= @current_user.name %>!</h3>
+<br>
 
-    <table>
-      <thead>
-        <th>Deck</th>
-        <th>Total Cards</th>
-        <th>Total Correct</th>
-      </thead>
-
-      <% @current_user.games.each do |game| %>
-      <tr>
-        <td><%= game.deck.name %></td>
-        <td><%= game.deck.cards.count %></td>
-        <td>
-          <%= game.guesses.select { |guess| guess.correct }.count %>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-</div>
-
-
-<div class="decks_table">
-<br><br><br><br><br>
-<p id="stats_header">Choose a deck to play.</p>
+<p id="stats_header">How did you do?</p>
   <table>
     <thead>
       <th>Deck</th>
-      <th>Play</th>
+      <th>Total Cards</th>
+      <th>Total Correct</th>
     </thead>
 
-    <% @decks.each do |deck| %>
+    <% @current_user.games.each do |game| %>
     <tr>
-      <td><%= deck.name %></td>
+      <td><%= game.deck.name %></td>
+      <td><%= game.deck.cards.count %></td>
       <td>
-        <form action="/games" method="POST">
-          <input type="hidden" name="deck_id" value="<%= deck.id %>">
-          <input class="btn btn-default" type="submit" value="Play">
-        </form>
+        <%= game.guesses.select { |guess| guess.correct }.count %>
       </td>
     </tr>
     <% end %>
-
   </table>
 </div>
+
+
+<div class="decks_div">
+<!-- <br><br><br><br><br> -->
+<!-- <p id="stats_header">Play a deck.</p> -->
+<hr id="deck_instructions_border"></hr>
+  <% @decks.each do |deck| %>
+    <div id="deck_<%= deck.id %>">
+      <h4><%= deck.name %></h4>
+      <br><hr id="deck_title_border"></hr><br>
+      <form action="/games" method="POST">
+          <input type="hidden" name="deck_id" value="<%= deck.id %>">
+          <input class="btn btn-default" type="submit" value="Play">
+        </form>
+    </div>
+  <% end %>
+</div>
+
 
 

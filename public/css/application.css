@@ -1,11 +1,32 @@
+* {
+  font-family: 'Source Serif Pro', serif;
+}
+
+@font-face {
+  font-family: 'LoveloBlack';
+  src: url(Lovelo/Black.otf) format("opentype");
+}
+
 .jumbotron {
-  /*border: 1px dotted black;*/
-  /*margin-top: 20px;*/
   border-radius: 5px;
   margin: 20px auto;
   padding: 30px;
   width: 90%;
 }
+
+h2 {
+  border: 1px solid black;
+  font-family: 'LoveloBlack';
+  color: white;
+  background-color: black;
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+}
+
+/*h3 {
+  font-family: 'Source Serif Pro', serif;
+}*/
 
 .title {
   text-align: center;
@@ -15,7 +36,6 @@
 }
 
 #title_line {
-  width: 500px;
   margin: auto;
 }
 
@@ -31,54 +51,95 @@ table {
   margin: auto;
   width: 90%;
   padding: 20px;
-}
-*/
+}*/
 
-.stats_table {
+.stats_table_div {
+  /*border: 1px solid black;*/
   display: inline-block;
-  vertical-align: top;
-  width: 400px;
+  vertical-align: center;
+  width: 420px;
   margin-bottom: 50px;
   margin-left: 20px;
   padding: 10px;
 }
 
  #stats_header {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
 }
 
-
-.stats_table th {
+.stats_table_div th {
   background-color: yellow;
   width: 200px;
   text-align: center;
-  font-size: 15px;
-  /*border-bottom: 2px solid black;*/
+  font-size: 16px;
   height: 50px;
 }
 
-.stats_table td {
+.stats_table_div td {
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
   border-bottom: 1px solid black;
   height: 50px;
+  padding-left: 5px;
 }
 
-
-.decks_table {
+.decks_div {
   /*border: 1px solid black;*/
-  /*border-left: 2px solid black;*/
   display: inline-block;
-  vertical-align: top;
-  margin-left: 5em;
+  vertical-align: center;
+  margin-left: 7em;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.decks_table th {
-  width: 200px;
-  text-align: left;
+#deck_instructions_border {
+  border: 1px solid black;
 }
 
+#deck_title_border {
+  width: 50px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+#deck_1 {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  background-color: #91FFB5;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 50px;
+  height: 230px;
+  width: 170px;
+}
+
+#deck_2 {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  background-color: #91FFB5;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 50px;
+  height: 230px;
+  width: 170px;
+}
+
+#deck_3 {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  background-color: #91FFB5;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 50px;
+  height: 230px;
+  width: 170px;
+}
 
