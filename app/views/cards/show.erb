@@ -1,11 +1,17 @@
+<br><br><br><br>
+
 <% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
+  <p id="flash_notice"><%= flash[:notice] %></p>
+  <hr></hr>
 <% end %>
 
+<div id="question_div">
+  <p id="question"><%= @card.question %></p>
+  <form action="/games/<%= @game.id %>/cards/<%= @card.id %>/guess" method="POST">
+    <input id="form_field" type="text" name="guess" placeholder=" Take a guess!">
+    <input class="btn btn-default" type="submit" value="Guess">
+  </form>
+</div>
 
-<%= @card.question %>
-<form action="/games/<%= @game.id %>/cards/<%= @card.id %>/guess" method="POST">
-  <input type="text" name="guess" placeholder="Take a guess!">
-  <input type="submit" value="Guess">
-</form>
 
+<br><br>

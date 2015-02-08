@@ -1,5 +1,7 @@
 before do
-  @current_user = User.find(session[:user_id])
+  if session[:user_id]
+    @current_user = User.find(session[:user_id])
+  end
 end
 
 get "/games/:game_id/cards/:id" do
@@ -21,7 +23,7 @@ post "/games/:game_id/cards/:id/guess" do
     flash[:notice] = "You got the correct answer!"
     Guess.create(game: game, card: card, correct: true)
   else
-    flash[:notice] = "The correct answer is #{card.answer}."
+    flash[:notice] = "Your guess was incorrect. The correct answer is #{card.answer}."
     Guess.create(game: game, card: card, correct: false)
   end
 

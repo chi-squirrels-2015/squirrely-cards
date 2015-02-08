@@ -7,6 +7,28 @@
   src: url(Lovelo/Black.otf) format("opentype");
 }
 
+hr {
+  border: 1px solid black;
+}
+
+nav {
+  position: relative;
+  top: -20px;
+  height: 30px;
+  float: right;
+  padding-bottom: 10px;
+}
+
+nav a {
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 5px;
+  color: black;
+  background-color: white;
+}
+
+/* #### CSS FOR VIEW: GAME/NEW #### */
+
 .jumbotron {
   border-radius: 5px;
   margin: 20px auto;
@@ -24,10 +46,6 @@ h2 {
   padding: 20px;
 }
 
-/*h3 {
-  font-family: 'Source Serif Pro', serif;
-}*/
-
 .title {
   text-align: center;
   font-size: 50px;
@@ -39,25 +57,10 @@ h2 {
   margin: auto;
 }
 
-/* #table_header {
-  font-size: 20px;
-  font-weight: bold;
-  padding-left: 40px;
-  height: 50px;
-}
-
-table {
-  text-align: center;
-  margin: auto;
-  width: 90%;
-  padding: 20px;
-}*/
-
 .stats_table_div {
-  /*border: 1px solid black;*/
   display: inline-block;
   vertical-align: center;
-  width: 420px;
+  width: 480px;
   margin-bottom: 50px;
   margin-left: 20px;
   padding: 10px;
@@ -69,6 +72,7 @@ table {
 }
 
 .stats_table_div th {
+  border: 5px solid yellow;
   background-color: yellow;
   width: 200px;
   text-align: center;
@@ -77,27 +81,33 @@ table {
 }
 
 .stats_table_div td {
+  /*border: 1px solid black;*/
   text-align: center;
   font-size: 14px;
   border-bottom: 1px solid black;
   height: 50px;
-  padding-left: 5px;
+  width: 30%;
+  padding-left: 3px;
 }
 
 .decks_div {
   /*border: 1px solid black;*/
   display: inline-block;
   vertical-align: center;
-  margin-left: 7em;
+  margin-left: 4em;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-#deck_instructions_border {
+#deck_header_border {
   border: 1px solid black;
 }
 
-#deck_title_border {
+#decks_header {
+  font-family: 'Source Serif Pro', serif;
+}
+
+#deck_name_border {
   width: 50px;
   margin: auto;
   border: 1px solid black;
@@ -113,7 +123,7 @@ table {
   text-align: center;
   padding-top: 50px;
   height: 230px;
-  width: 170px;
+  width: 175px;
 }
 
 #deck_2 {
@@ -126,7 +136,7 @@ table {
   text-align: center;
   padding-top: 50px;
   height: 230px;
-  width: 170px;
+  width: 175px;
 }
 
 #deck_3 {
@@ -140,6 +150,60 @@ table {
   text-align: center;
   padding-top: 50px;
   height: 230px;
-  width: 170px;
+  width: 175px;
 }
 
+#deck_4 {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  background-color: #91FFB5;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 50px;
+  height: 230px;
+  width: 175px;
+}
+
+
+/* #### CSS FOR CARDS WHEN GAME IS BEING PLAYED #### */
+
+#question_div {
+  width: 70%;
+}
+
+#question {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 22px;
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+}
+
+#flash_notice {
+  background-color: yellow;
+  font-size: 18px;
+  width: 50%;
+  height: 50px;
+  padding: 10px;
+}
+
+#form_field {
+  width: 40%;
+  height: 37px;
+  border-radius: 5px;
+  margin-right: 3px;
+}
+
+#finish_message {
+  font-size: 18px;
+}
+
+#score_message {
+  font-size: 18px;
+}
+
+a {
+  color: blue;
+}

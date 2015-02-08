@@ -24,11 +24,12 @@
 </head>
 
 <body>
-
   <div class="jumbotron">
+    <% if session[:user_id] %>
+      <nav><a href="/games/new">Home</a><a href="/logout">Logout</a> </nav>
+    <% end %>
     <%= yield %>
   </div>
-
 </body>
 
 </html>
