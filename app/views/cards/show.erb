@@ -1,11 +1,13 @@
 <br><br><br><br>
 
+<div id="question_div">
+
 <% if flash[:notice] %>
   <p id="flash_notice"><%= flash[:notice] %></p>
   <hr></hr>
 <% end %>
 
-<div id="question_div">
+
   <p id="question"><%= @card.question %></p>
   <form action="/games/<%= @game.id %>/cards/<%= @card.id %>/guess" method="POST">
     <input id="form_field" type="text" name="guess" placeholder=" Take a guess!">
